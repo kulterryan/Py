@@ -16,26 +16,38 @@ print("** Only 'mbps' to 'MBps' is currently available. ** ")
 
 # Input Screen
 downloadspeed =  int(input("Enter Download Speed (in mbps): "))
-filesize_Mb =  int(input("Enter File Size (in GB): ")) # File Size Mb = MegaBytes
+filesizeF = int(input("Choose the File Size format:\n1. GB\n2. MB\nEnter your Choice: "))
 
-# Defined
-
+# Predefined
 def time_convert(downloadtime):
     return time.strftime("%H:%M:%S", time.gmtime(downloadtime))
 
-def dt_conversion(downloadspeed, filesize_Mb):
-    filesize_bit = filesize_Mb * 1000 * 1000 * 1000 * 8 # (1 Gb = Mb * * 1000 mb * 1000 kb * 1000 bytes * 8 bits)
-    # print(filesize_bit)
+# For File Size Consversion
+def dt_conversion_mb(downloadspeed):
+    filesize_Mb =  int(input("Enter File Size (in): ")) # File Size Mb = MegaBytes
+
+    if (filesizeF==1): # For GB Conversion to Bits
+        filesize_bit = filesize_Mb * 1000 * 1000 * 1000 * 8
+    
+    elif (filesizeF==2): # For MB Conversion to Bits
+        filesize_bit = filesize_Mb * 1000 * 1000 * 8
+
+    else:
+        print("Incorrect Input! See YA!")
 
     filesize_mb = filesize_bit / (1000*1000)
     # print(filesize_mb)
 
     downloadtime = filesize_mb / downloadspeed
     # print(downloadtime)
+
+    downloadrate = round(((filesize_mb/8) / downloadtime), 3)
+    # print(downloadrate)
+
     totaltime = time_convert(downloadtime)
-    print("Total Download Time (HH:MM:SS): ", totaltime)
+    print("Total Download Time (HH:MM:SS):", totaltime)
+    print("Rate of File Downloading", downloadrate, "MBs Per Second")
 
 
-print("Speed Entered: ", downloadspeed, "mbps")
-print("File Size Entered: ", filesize_Mb,  "MB")
-dt_conversion(downloadspeed, filesize_Mb)
+# print("Speed Entered: ", downloadspeed, "mbps")
+dt_conversion_mb(downloadspeed)
