@@ -24,7 +24,7 @@ def time_convert(downloadtime):
 
 # For File Size Consversion
 def dt_conversion_mb(downloadspeed):
-    filesize_Mb =  int(input("Enter File Size (in): ")) # File Size Mb = MegaBytes
+    filesize_Mb = float(input("Enter File Size (in): ")) # File Size Mb = MegaBytes
 
     if (filesizeF==1): # For GB Conversion to Bits
         filesize_bit = filesize_Mb * 1000 * 1000 * 1000 * 8

@@ -10,6 +10,7 @@ while True: # Entering the loop
 
     if guess < random:
         print("Too low")
+        print("")
     elif guess > random:
         print("Too high")
     else:
