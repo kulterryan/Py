@@ -42,18 +42,3 @@ class open_class():
     def class_lls():
         url='https://meet.google.com/ymq-qegs-dfb?pli=1&authuser=2'
         launch_chrome(url)
-
-# Opening Classes Meet Link
-print("Launching Maths Class")
-open_class.class_maths()
-print("Launching Maths Class")
-open_class.class_physics()
-print("Launching Maths Class")
-open_class.class_bcem()
-print("Launching Maths Class")
-open_class.class_bcs()
-print("Launching Maths Class")
-open_class.class_lls()
-print("Launching Maths Class")
-open_class.class_me()
-print("Launching Maths Class")
